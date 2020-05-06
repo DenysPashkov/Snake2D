@@ -17,6 +17,7 @@
 		8475080C24619260006864F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8475080A24619260006864F9 /* LaunchScreen.storyboard */; };
 		8475081724619260006864F9 /* Snake2DTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475081624619260006864F9 /* Snake2DTests.swift */; };
 		8475082224619260006864F9 /* Snake2DUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475082124619260006864F9 /* Snake2DUITests.swift */; };
+		8475083224619378006864F9 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475083124619378006864F9 /* GameManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		8475081D24619260006864F9 /* Snake2DUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Snake2DUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8475082124619260006864F9 /* Snake2DUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snake2DUITests.swift; sourceTree = "<group>"; };
 		8475082324619260006864F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8475083124619378006864F9 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,10 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				847507FB2461925F006864F9 /* AppDelegate.swift */,
-				847507FD2461925F006864F9 /* GameScene.sks */,
-				847507FF2461925F006864F9 /* Actions.sks */,
-				847508012461925F006864F9 /* GameScene.swift */,
 				847508032461925F006864F9 /* GameViewController.swift */,
+				8475082F246192FD006864F9 /* Code */,
+				8475083024619307006864F9 /* Scene */,
 				847508052461925F006864F9 /* Main.storyboard */,
 				8475080824619260006864F9 /* Assets.xcassets */,
 				8475080A24619260006864F9 /* LaunchScreen.storyboard */,
@@ -132,6 +133,24 @@
 				8475082324619260006864F9 /* Info.plist */,
 			);
 			path = Snake2DUITests;
+			sourceTree = "<group>";
+		};
+		8475082F246192FD006864F9 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				847508012461925F006864F9 /* GameScene.swift */,
+				8475083124619378006864F9 /* GameManager.swift */,
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
+		8475083024619307006864F9 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				847507FD2461925F006864F9 /* GameScene.sks */,
+				847507FF2461925F006864F9 /* Actions.sks */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				847508022461925F006864F9 /* GameScene.swift in Sources */,
+				8475083224619378006864F9 /* GameManager.swift in Sources */,
 				847508042461925F006864F9 /* GameViewController.swift in Sources */,
 				847507FC2461925F006864F9 /* AppDelegate.swift in Sources */,
 			);
