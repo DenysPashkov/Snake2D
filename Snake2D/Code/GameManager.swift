@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import SwiftUI
 
 enum PlayerDirection {
 	case stop
@@ -28,9 +29,15 @@ class GameManager {
 	private var playerDirection : PlayerDirection = .left
 	private var futureDirection : PlayerDirection = .left
 	
+	let bodyTexture : SKTexture
+
 	init(scene: GameScene, isEasyDifficulty : Bool) {
 		self.scene = scene
 		self.isEasyDifficulty = isEasyDifficulty
+		
+		bodyTexture = SKTexture(image: UIImage(named: "snake_body")!)
+		
+		
 	}
 	
 	func initGame() {
@@ -40,6 +47,12 @@ class GameManager {
 		scene.playerPositions.append((10, 12))
 		renderChange()
 		generateNewPoint()
+	}
+	
+//	MARK: TEXTURE SETUP
+	
+	func initTexture(){
+		
 	}
 	
 //	MARK: MANAGE MOVEMENT
@@ -58,13 +71,24 @@ class GameManager {
 	private func renderChange() {
 		for (node, x, y) in scene.gameArray {
 			if contains(a: scene.playerPositions, v: (x,y)) {
-				node.fillColor = SKColor.cyan
+				
+				if x == scene.playerPositions[0].0 && y == scene.playerPositions[0].1 {
+					
+					node.fillColor = .systemGreen
+					
+					
+				} else {
+					node.fillColor = SKColor.green
+				}
+				
+				
 			} else {
 				node.fillColor = SKColor.clear
 				
 				if scene.scorePos != nil {
 					if Int((scene.scorePos?.x)!) == y && Int((scene.scorePos?.y)!) == x {
-						node.fillColor = SKColor.red
+						node.fillTexture = bodyTexture
+						node.fillColor = SKColor.lightGray
 					}
 				}
 			}
@@ -186,7 +210,7 @@ class GameManager {
 			randomX = CGFloat(arc4random_uniform(19))
 			randomY = CGFloat(arc4random_uniform(36))
 		}
-		
+		print("\(randomX) : \(randomY)")
 		scene.scorePos = CGPoint(x: randomX, y: randomY)
 		
 	}
@@ -297,3 +321,4 @@ class GameManager {
 	}
 	
 }
+

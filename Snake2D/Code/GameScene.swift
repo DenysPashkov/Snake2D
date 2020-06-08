@@ -96,9 +96,9 @@ class GameScene: SKScene {
 		
 		let width = frame.size.width - 200
 		let height = frame.size.height - 300
-		let rect = CGRect(x: -width / 2, y: -height / 2, width: width, height: height)
+		let rect = CGRect(x: -width / 2, y: -height / 2 + 15.5, width: 550, height: 1018)
 		gameBG = SKShapeNode(rect: rect, cornerRadius: 0.02)
-		gameBG.fillColor = SKColor.darkGray
+		gameBG.fillColor = SKColor.black
 		gameBG.zPosition = 2
 		gameBG.isHidden = true
 		self.addChild(gameBG)
@@ -190,7 +190,7 @@ class GameScene: SKScene {
 		for i in 0...numRows - 1 {
 			for j in 0...numCols - 1 {
 				let cellNode = SKShapeNode(rectOf: CGSize(width: cellWidth, height: cellWidth))
-				cellNode.strokeColor = SKColor.black
+				cellNode.strokeColor = SKColor.darkGray
 				cellNode.zPosition = 2
 				cellNode.position = CGPoint(x: x, y: y)
 ///				add to array of cells -- then add to game board
